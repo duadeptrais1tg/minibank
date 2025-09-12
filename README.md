@@ -1,7 +1,7 @@
 # 🏦 MiniBank — Hệ thống tài khoản ngân hàng & giao dịch an toàn
 
 ## 🎯 Mục tiêu dự án
-Ứng dụng console mô phỏng hệ thống ngân hàng với các chức năng quản lý tài khoản và giao dịch, được xây dựng bằng C# theo chuẩn OOP.  
+Ứng dụng console mô phỏng hệ thống ngân hàng với các chức năng quản lý tài khoản và giao dịch, được xây dựng bằng **Java** theo chuẩn OOP.  
 Mục tiêu:
 - Vận dụng **đóng gói, kế thừa, đa hình, trừu tượng hóa**.
 - Thiết kế **interface** cho hành vi lãi suất và phí.
@@ -13,11 +13,11 @@ Mục tiêu:
 
 ## 📂 Cấu trúc lớp chính
 - `abstract class BankAccount`
-  - Thuộc tính: `AccountNumber`, `OwnerName`, `Balance`, `CreatedAt`
-  - Phương thức: `Deposit()`, `Withdraw()`, `ToString()`
-- `SavingsAccount` (tài khoản tiết kiệm) — có lãi suất, implement `IInterestBearing`
-- `CheckingAccount` (tài khoản thanh toán) — có phí giao dịch, implement `IFeeDeductible`
-- `CreditAccount` (tài khoản tín dụng, tùy chọn) — có hạn mức chi tiêu
+  - Thuộc tính: `accountNumber`, `ownerName`, `balance`, `createdAt`
+  - Phương thức: `deposit()`, `withdraw()`, `toString()`
+- `SavingsAccount` (tài khoản tiết kiệm) — có lãi suất, implements `InterestBearing`
+- `CheckingAccount` (tài khoản thanh toán) — có phí giao dịch, implements `FeeDeductible`
+- `CreditAccount` (tài khoản tín dụng, tuỳ chọn) — có hạn mức chi tiêu
 - `Transaction` — lưu lịch sử giao dịch
 - `Bank` — quản lý danh sách tài khoản + giao dịch
 
@@ -48,10 +48,11 @@ Mục tiêu:
 
 ## ▶️ Cách chạy
 ### Yêu cầu
-- .NET 6.0 trở lên (cài [tại đây](https://dotnet.microsoft.com/download))
+- Cài đặt **Java JDK 17** (hoặc cao hơn)
 
 ### Build & Run
 ```bash
-git clone https://github.com/<your-username>/MiniBank.git
-cd MiniBank
-dotnet run
+git clone https://github.com/duadeptrais1tg/minibank
+cd MiniBank/src
+javac Main.java
+java Main
