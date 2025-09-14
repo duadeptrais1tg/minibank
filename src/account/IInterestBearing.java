@@ -1,5 +1,5 @@
 package account;
 
-public interface InterestBearing {
+public interface IInterestBearing {
 	public void ApplyMonthlyInterest();
 }

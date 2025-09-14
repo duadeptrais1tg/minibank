@@ -25,16 +25,19 @@ public abstract class BankAccount {
 	public double getBalance() {
 		return balance;
 	}
+	public void setBalance(double Balance) {
+		this.balance = balance;
+	}
 	public LocalDateTime getCreatedAt() {
 		return createdAt;
 	}
-	public virtual void deposit(double amount) throws NegativeAmountException {
+	public  void deposit(double amount) throws NegativeAmountException {
 		if(amount <= 0) {
             throw new NegativeAmountException("Số tiền nạp phải lớn hơn 0.");
         }
         balance += amount;
 	}
-	public virtual void withdraw(double amount) throws InsufficientFundsException, NegativeAmountException {
+	public void withdraw(double amount) throws InsufficientFundsException, NegativeAmountException {
 		if(amount <= 0) {
 			throw new NegativeAmountException("Số tiền nạp phải lớn hơn 0.");
 		}
