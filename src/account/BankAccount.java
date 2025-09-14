@@ -25,7 +25,7 @@ public abstract class BankAccount {
 	public double getBalance() {
 		return balance;
 	}
-	public void setBalance(double Balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 	public LocalDateTime getCreatedAt() {
@@ -39,7 +39,7 @@ public abstract class BankAccount {
 	}
 	public void withdraw(double amount) throws InsufficientFundsException, NegativeAmountException {
 		if(amount <= 0) {
-			throw new NegativeAmountException("Số tiền nạp phải lớn hơn 0.");
+			throw new NegativeAmountException("Số tiền rút phải lớn hơn 0.");
 		}
 		if(amount > balance) {
 			throw new InsufficientFundsException("Số dư không đủ thực hiện.");

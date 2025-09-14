@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class CheckingAccount extends BankAccount implements IFeeDeductible {
 	private double fee;
-	public public CheckingAccount(String accountNumber, String ownerName, double balance, LocalDateTime createdAt, double fee) {
+	public CheckingAccount(String accountNumber, String ownerName, double balance, LocalDateTime createdAt, double fee) {
 		super(accountNumber, ownerName, balance, createdAt);
 		this.fee = fee;
 	}
